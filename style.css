@@ -1,0 +1,178 @@
+/* Основные стили */
+:root {
+  /* Цветовая схема */
+  --primary-color: #007bff;
+  --primary-color-dark: #0056b3;
+  --danger-color: #dc3545;
+  --danger-color-dark: #a71d2a;
+  --card-bg-color: #222;
+  --text-color: #fff;
+  --text-muted: #6c757d;
+
+  /* Размеры и отступы */
+  --button-margin: 4px;
+  --button-border-radius: 4px;
+  --card-border-radius: 10px;
+  --input-margin-bottom: 12px;
+}
+
+/* Общие стили страницы */
+body {
+  font-family: "Share Tech Mono", monospace;
+  background-color: #f8f9fa;
+}
+
+/* Контейнер калькулятора */
+.calc-row {
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.calculator {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Карточка калькулятора */
+.card {
+  background-color: var(--card-bg-color);
+  border-radius: var(--card-border-radius);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
+}
+
+/* Поле ввода */
+.input-window {
+  text-align: end;
+  font-size: x-large;
+  margin-bottom: var(--input-margin-bottom);
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  height: 50px;
+  border: 2px solid var(--primary-color-dark);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s;
+}
+
+.input-window:focus {
+  border-color: var(--primary-color);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили кнопок */
+.btn {
+  margin-bottom: var(--button-margin);
+  font-weight: bold;
+  height: 50px;
+  border-radius: var(--button-border-radius);
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
+}
+
+/* Эффект пульсации при нажатии */
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  pointer-events: none;
+}
+
+.btn:active::after {
+  transform: scale(2);
+  opacity: 0;
+  transition: 0s;
+}
+
+/* Типы кнопок */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color-dark);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-color-dark);
+  border-color: var(--primary-color-dark);
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color-dark);
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-color-dark);
+  border-color: var(--danger-color-dark);
+}
+
+.operation-button {
+  background-color: #0069d9;
+  font-size: 1.2rem;
+}
+
+/* Строки калькулятора */
+.calculator-row {
+  margin-bottom: var(--button-margin);
+}
+
+/* Адаптивность */
+@media (max-width: 576px) {
+  .card {
+    margin: 0 10px;
+  }
+
+  .btn {
+    height: 45px;
+    font-size: 0.9rem;
+  }
+
+  .input-window {
+    height: 45px;
+    font-size: large;
+  }
+}
+
+@media (max-width: 350px) {
+  .btn {
+    height: 40px;
+    font-size: 0.85rem;
+    padding: 0.375rem 0.5rem;
+  }
+
+  .input-window {
+    height: 40px;
+    font-size: medium;
+  }
+}

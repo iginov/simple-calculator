@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Простой калькулятор на JavaScript" />
+    <title>Калькулятор</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+  </head>
+  <body>
+    <!-- Основной контейнер -->
+    <main class="container">
+      <section class="row calc-row align-items-center justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-4">
+          <!-- Калькулятор -->
+          <article class="calculator">
+            <div class="card shadow" id="calc">
+              <header class="card-header bg-dark text-white text-center">
+                <h1 class="h5 mb-0">Калькулятор</h1>
+              </header>
+              <div class="card-body">
+                <!-- Поле ввода/вывода -->
+                <div class="form-group mb-4">
+                  <label for="inputWindow" class="sr-only"
+                    >Дисплей калькулятора</label
+                  >
+                  <input
+                    class="form-control input-window"
+                    id="inputWindow"
+                    aria-label="Результат вычислений"
+                    type="text"
+                    readonly
+                    value=""
+                  />
+                </div>
+
+                <!-- Область кнопок -->
+                <div class="calculator-buttons">
+                  <!-- Кнопка очистки -->
+                  <div class="row no-gutters mb-2">
+                    <div class="col">
+                      <button
+                        class="btn btn-danger form-control"
+                        id="btn_clr"
+                        aria-label="Очистить"
+                      >
+                        C
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Первый ряд кнопок -->
+                  <div class="row no-gutters calculator-row">
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_1">
+                        1
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_2">
+                        2
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_3">
+                        3
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-primary form-control operation-button"
+                        id="btn_plus"
+                        aria-label="Сложение"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Второй ряд кнопок -->
+                  <div class="row no-gutters calculator-row">
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_4">
+                        4
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_5">
+                        5
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_6">
+                        6
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-primary form-control operation-button"
+                        id="btn_minus"
+                        aria-label="Вычитание"
+                      >
+                        -
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Третий ряд кнопок -->
+                  <div class="row no-gutters calculator-row">
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_7">
+                        7
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_8">
+                        8
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_9">
+                        9
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-primary form-control operation-button"
+                        id="btn_mult"
+                        aria-label="Умножение"
+                      >
+                        *
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- Четвертый ряд кнопок -->
+                  <div class="row no-gutters calculator-row">
+                    <div class="col-3">
+                      <button
+                        class="btn btn-primary form-control"
+                        id="btn_calc"
+                        aria-label="Вычислить"
+                      >
+                        =
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button class="btn btn-primary form-control" id="btn_0">
+                        0
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-primary form-control operation-button"
+                        id="btn_sqrt"
+                        aria-label="Квадратный корень"
+                      >
+                        √
+                      </button>
+                    </div>
+                    <div class="col-3">
+                      <button
+                        class="btn btn-primary form-control operation-button"
+                        id="btn_div"
+                        aria-label="Деление"
+                      >
+                        /
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer class="card-footer text-center text-muted">
+                <small>© 2025 Калькулятор на JavaScript</small>
+              </footer>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
